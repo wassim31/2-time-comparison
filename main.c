@@ -34,7 +34,7 @@ int main()
     } while(hour1 > 24 || minute1 > 60 || second1 > 60);
     if(hour1 == 24)
     {
-        hour1 = (double) 00;
+        hour1 =  00;
     }
     if(minute1 == 60)
     {
@@ -47,11 +47,6 @@ int main()
         minute1++;
     }
     printf("(second-time) it's %02d : %02d : %02d \n\n", hour1, minute1, second1);
-
-    // the main comparison of the times
-
-
-
     if(hour > hour1)
     {
         printf("The first time is : %02d : %02d : %02d \n", hour1, minute1, second1);
@@ -59,50 +54,37 @@ int main()
     else if(hour1 > hour)
     {
         printf("The first1 time is : %02d : %02d : %02d \n", hour, minute, second);
-
     }
-
-    // hours comparison is finished
-        if (hour == hour1)
+   else 
+   {
+		printf("the same hours , let's move to minutes\n");
+        if(minute > minute1)
         {
-            printf("the same hours , let's move to minutes\n");
-            if(minute > minute1)
-            {
-                printf("The first time is : %02d : %02d : %02d \n", hour1, minute1, second1);
-
-            }
-            else if(minute1 > minute)
-            {
-                printf("The first time is : %02d : %02d : %02d \n", hour, minute, second);
-
-            }
+            printf("The first time is : %02d : %02d : %02d \n", hour1, minute1, second1);
 
         }
-        // minutes comparison is finished
-
-
-
-        if (minute == minute1 && hour == hour1)
+        else if(minute1 > minute)
         {
-            printf("the same minutes , let's move to seconds\n");
-            if(second > second1)
-            {
-                printf("The first time is : %02d : %02d : %02d \n", hour1, minute1, second1);
-            }
+            printf("The first time is : %02d : %02d : %02d \n", hour, minute, second);
+
+        }
+		else 
+        {
+        	printf("the same minutes , let's move to seconds\n");
+        	if(second > second1)
+        	{
+            	printf("The first time is : %02d : %02d : %02d \n", hour1, minute1, second1);
+          	}
             else if(second1 > second)
-            {
-                printf("The first time is : %02d : %02d : %02d \n", hour, minute, second);
-
-            }
+          	{
+              	printf("The first time is : %02d : %02d : %02d \n", hour, minute, second);
+          	}
+         	else 
+          	{
+              	printf("it's the same time : %02d : %02d : %02d \n", hour1, minute1, second1);
+          	} 
         }
-
-        // seconds comparison is finished
-        if(hour == hour1 && minute == minute1 && second == second1)
-        {
-            printf("it's the same time : %02d : %02d : %02d \n", hour1, minute1, second1);
-
-        }
-
-    return 0;
-        }
+   }
+   return 0;
+}
 
