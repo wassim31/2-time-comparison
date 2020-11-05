@@ -4,6 +4,7 @@
 int main()
 {
     int hour, minute, second, hour1, minute1, second1;
+    int dif;
     printf("Enter the first time\n");
     do
     {
@@ -47,44 +48,20 @@ int main()
         minute1++;
     }
     printf("(second-time) it's %02d : %02d : %02d \n\n", hour1, minute1, second1);
-    if(hour > hour1)
+    def = (3600 * hour) + (60 * minute) + (second) - (3600 * hour1) + (60 * minute1) + (second1)
+
+    if(def > 0)
     {
         printf("The first time is : %02d : %02d : %02d \n", hour1, minute1, second1);
     }
-    else if(hour1 > hour)
+    else if(def < 0)
     {
-        printf("The first1 time is : %02d : %02d : %02d \n", hour, minute, second);
+        printf("The first time is : %02d : %02d : %02d \n", hour, minute, second);
     }
-   else 
-   {
-		printf("the same hours , let's move to minutes\n");
-        if(minute > minute1)
-        {
-            printf("The first time is : %02d : %02d : %02d \n", hour1, minute1, second1);
-
-        }
-        else if(minute1 > minute)
-        {
-            printf("The first time is : %02d : %02d : %02d \n", hour, minute, second);
-
-        }
-		else 
-        {
-        	printf("the same minutes , let's move to seconds\n");
-        	if(second > second1)
-        	{
-            	printf("The first time is : %02d : %02d : %02d \n", hour1, minute1, second1);
-          	}
-            else if(second1 > second)
-          	{
-              	printf("The first time is : %02d : %02d : %02d \n", hour, minute, second);
-          	}
-         	else 
-          	{
-              	printf("it's the same time : %02d : %02d : %02d \n", hour1, minute1, second1);
-          	} 
-        }
-   }
-   return 0;
+    else
+    {
+        printf("The same time : %02d : %02d : %02d \n", hour1, minute1, second1);
+    }
+    return 0;
 }
 
